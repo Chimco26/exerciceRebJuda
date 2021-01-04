@@ -1,0 +1,3 @@
+# exerciceRebJuda
+Rabbi Yéhouda notre grand maitre
+Bonjour a toutes et a tous....
