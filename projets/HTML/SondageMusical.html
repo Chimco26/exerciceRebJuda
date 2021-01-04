@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sondage musical</h1>
+<br><hr>
+<form action="www.google.com/search" method="q">
+    <p>
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom"><br><hr>
+
+        <label for="mail">Courriel:</label>
+        <input type="email" name="mail"><br>
+
+        <fieldset>
+            <legend><h2>Choisissez votre type de musique</h2></legend>
+            <input type="radio" name="type" value="pop" id="pop">
+            <label for="pop">pop</label>
+
+            <input type="radio" name="type" value="classique" id="classique">
+            <label for="classique">classique</label>
+
+            <input type="radio" name="type" value="rock" id="rock">
+            <label for="rock">rock</label>
+
+            <input type="radio" name="type" value="folk" id="folk">
+            <label for="folk">folk</label>
+
+            <input type="radio" name="type" value="rap" id="rap">
+            <label for="rap">rap</label>
+
+            <input type="text" name="autre" id="autre" placeholder="autre">
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Indiquez à quelle fréquence vous achetez de la musique</h2></legend>
+            <input type="radio" name="frequence" id="semaine" value="semaine">
+            <label for="semaine">A chaque semaine</label><br>
+
+            <input type="radio" name="frequence" id="mois" value="mois">
+            <label for="mois">mois</label><br>
+
+            <input type="radio" name="frequence" id="année" value="année">
+            <label for="année">année</label><br>
+
+            <input type="radio" name="frequence" id="jamais" value="jamais">
+            <label for="jamais">jamais</label>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Indiquez tous les endroits où vous écoutez de la musique</h2></legend>
+            <input type="checkbox" name="maison" id="maison">
+            <label for="maison">maison</label><br>
+
+            <input type="checkbox" name="auto" id="auto">
+            <label for="auto">auto</label><br>
+
+            <input type="checkbox" name="metro" id="metro">
+            <label for="metro">metro</label><br>
+
+            <input type="checkbox" name="partout" id="partout">
+            <label for="partout">partout</label><br>
+        </fieldset><hr>
+
+        <h2>Nommez votre artiste préféré</h2>
+        <input type="text" name="artiste" id="artiste"><br><hr>
+
+        <h2>Quel role joue la musique dans votre vie?</h2>
+        <textarea name="role" id="role" cols="80" rows="5"></textarea><br><br><hr/><br>
+
+        <input type="submit" value="J'envoie">
+        <input type="reset" value="Je recommence">
+
+    </p>
+</form>
+</body>
+</html>
