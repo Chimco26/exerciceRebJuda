@@ -1,0 +1,11 @@
+button:focus {
+  color: white;
+  background-color: blue;
+}
+
+button {
+  height: 70px;
+  width: 110px;
+  box-sizing: border-box;
+  padding: 0;
+}

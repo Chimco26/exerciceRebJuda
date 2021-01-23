@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Departure</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Operator</th>
+      <th scope="col">Bus ID</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let dispo of dispoDates">
+      <tr>
+        <app-cmp-main1 [dispo1]="dispo"></app-cmp-main1>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

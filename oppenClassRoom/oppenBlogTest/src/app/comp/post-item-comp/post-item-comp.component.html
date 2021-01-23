@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{ post.created_at | date: "short" }}</h3>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-8">{{ post.title }}</div>
+  <div class="col-4">{{ post.created_at | date: "short" }}</div> -->
+</div>
+<p>{{ post.content }}</p>
+<p>{{ post.loveIts }} loves</p>
+<button class="btn btn-success" (click)="moreLove()">Love it</button>
+<button class="btn btn-danger" (click)="lessLove()">Don't love it</button>
