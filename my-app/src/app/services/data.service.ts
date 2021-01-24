@@ -16,11 +16,9 @@ export class DataService {
   STATES_LETTERS = Object.keys(this.STATES);
   driveData = [];
 
-  dispoDates: DispoModel[] = [];
-
   constructor() {
     for (let i = 0; i < 1000; i++) {
-      const theDate = randomDate(new Date(2021, 0, 1), new Date(2021, 0, 5));
+      const theDate = randomDate(new Date(2021, 0, 1), new Date(2021, 0, 8));
       this.driveData.push({
         date: theDate,
         due:
@@ -50,6 +48,38 @@ export class DataService {
     function randomIntFromInterval(min, max) {
       // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  }
+
+  dataTravel;
+  lowerPrice = [1000, 1000, 1000, 1000, 1000, 1000, 1000];
+  datesArray = [];
+  currentDispoDates = [];
+  dispoDates = [[]];
+
+  resultDates() {
+    let fixDate = new Date(this.dataTravel.date);
+    let currentDate = fixDate;
+    fixDate.setHours(0, 0, 0, 0);
+    this.dispoDates.length = 0;
+
+    for (let indexD = 0; indexD < 7; indexD++) {
+      currentDate.setDate(fixDate.getDate() + indexD);
+      this.datesArray.push(currentDate);
+      for (let index = 0; index < this.driveData.length; index++) {
+        this.driveData[index].date.setHours(0, 0, 0, 0);
+        if (
+          this.dataTravel.source === this.driveData[index].source &&
+          this.dataTravel.dest === this.driveData[index].dest &&
+          currentDate.getTime() === this.driveData[index].date.getTime()
+        ) {
+          debugger;
+          this.dispoDates[indexD].push(this.driveData[index]);
+          if (this.driveData[index].price < this.lowerPrice[indexD]) {
+            this.lowerPrice[indexD] = this.driveData[index].price;
+          }
+        }
+      }
     }
   }
 }

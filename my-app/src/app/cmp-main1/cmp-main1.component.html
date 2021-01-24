@@ -1,7 +1,8 @@
-<ng-container>
+<ng-container *ngIf="dispo1">
   <th scope="row">{{dispo1.source}}</th>
-  <td>{{dispo1.due}}</td>
+  <td>{{ dispo1.date | date: "EEE, LLL dd" }}</td>
   <td>{{dispo1.dest}}</td>
+  <td>{{dispo1.due}}</td>
   <td>{{dispo1.operator}}</td>
   <td>{{dispo1.busId}}</td>
   <td>{{dispo1.price}}</td>
