@@ -6,11 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   STATES = {
-    MS: 'Mississippi',
     NJ: 'New Jersey',
     NM: 'New Mexico',
     NY: 'New York',
-    WA: 'Washington',
   };
   OPERATORS = ['Metro Transit', 'Ride SMART', 'Westcat', 'Citilink'];
   STATES_LETTERS = Object.keys(this.STATES);
@@ -18,7 +16,7 @@ export class DataService {
 
   constructor() {
     for (let i = 0; i < 1000; i++) {
-      const theDate = randomDate(new Date(2021, 0, 1), new Date(2021, 0, 8));
+      const theDate = randomDate(new Date(2021, 0, 1), new Date(2021, 0, 30));
       this.driveData.push({
         date: theDate,
         due:
@@ -51,35 +49,51 @@ export class DataService {
     }
   }
 
-  dataTravel;
-  lowerPrice = [1000, 1000, 1000, 1000, 1000, 1000, 1000];
+  lowerPrice = 1000;
   datesArray = [];
   currentDispoDates = [];
-  dispoDates = [[]];
+  dispoTravels = [];
+  datesWeek = [];
+  source;
+  dest;
 
-  resultDates() {
-    let fixDate = new Date(this.dataTravel.date);
-    let currentDate = fixDate;
+  pushTravelsAndLowerPrice(source, dest, date) {
+    this.dispoTravels.length = 0;
+    let fixDate = new Date(date);
     fixDate.setHours(0, 0, 0, 0);
-    this.dispoDates.length = 0;
-
-    for (let indexD = 0; indexD < 7; indexD++) {
-      currentDate.setDate(fixDate.getDate() + indexD);
-      this.datesArray.push(currentDate);
-      for (let index = 0; index < this.driveData.length; index++) {
-        this.driveData[index].date.setHours(0, 0, 0, 0);
-        if (
-          this.dataTravel.source === this.driveData[index].source &&
-          this.dataTravel.dest === this.driveData[index].dest &&
-          currentDate.getTime() === this.driveData[index].date.getTime()
-        ) {
-          debugger;
-          this.dispoDates[indexD].push(this.driveData[index]);
-          if (this.driveData[index].price < this.lowerPrice[indexD]) {
-            this.lowerPrice[indexD] = this.driveData[index].price;
-          }
-        }
+    for (let index = 0; index < this.driveData.length; index++) {
+      this.driveData[index].date.setHours(0, 0, 0, 0);
+      if (
+        source === this.driveData[index].source &&
+        dest === this.driveData[index].dest &&
+        fixDate.getTime() === this.driveData[index].date.getTime()
+      ) {
+        this.dispoTravels.push(this.driveData[index]);
+      }
+      if (this.driveData[index].price < this.lowerPrice) {
+        this.lowerPrice = this.driveData[index].price;
+        console.log(this.lowerPrice);
       }
     }
+  }
+
+  pushDatesWeek(date) {
+    for (let index = 0; index < 7; index++) {
+      let fixDate = new Date(date);
+      let currentDate = fixDate;
+      currentDate.setDate(fixDate.getDate() + index);
+      console.log(currentDate);
+      this.datesArray.push(currentDate);
+    }
+  }
+
+  resultDates(source, dest, date) {
+    let fixDate = new Date(date);
+    fixDate.setHours(0, 0, 0, 0);
+    this.dispoTravels.length = 0;
+
+    this.pushTravelsAndLowerPrice(source, dest, fixDate);
+
+    this.pushDatesWeek(date);
   }
 }

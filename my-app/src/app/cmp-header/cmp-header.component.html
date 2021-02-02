@@ -1,10 +1,10 @@
 <header class="container-fluid bg-light mb-5">
-  <h1>Bus ticket</h1>
+  <h1>Bus tickets</h1>
   <nav class="navbar navbar-expand-lg navbar-light">
     <form style="width: 100%">
       <div class="form-row">
         <div class="col-12 col-md-3 mb-3 px-3">
-            <select class="form-control" [(ngModel)]="dataTravel.source" name="source">
+            <select class="form-control" [(ngModel)]="source" name="source">
               <option value="NY">New York</option>
               <option value="NJ">New Jersey</option>
               <option value="NM">New Mexico</option>
@@ -12,15 +12,15 @@
         </div>
         <div class="col-12 col-md-3 mb-3 px-3">
           <label>
-            <select class="form-control" [(ngModel)]="dataTravel.dest" name="source">
+            <select class="form-control" [(ngModel)]="dest" name="source">
+              <option value="NY">New York</option>
               <option value="NJ">New Jersey</option>
-              <option value="WA">Washington</option>
-              <option value="MS">Mississippi</option>
+              <option value="NM">New Mexico</option>
             </select>
           </label>
         </div>
         <div class="col-12 col-md-3 mb-3 px-3">
-          <input type="date" class="form-control" [(ngModel)]="dataTravel.date" name="source" />
+          <input type="date" class="form-control" [(ngModel)]="date" name="source" />
         </div>
         <div class="col-12 col-md-2 text-right">
           <button type="submit" class="btn btn-orange" (click)="resultDates()">Submit</button>

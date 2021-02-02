@@ -1,40 +1,61 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/internal/Subject';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppareilService {
 
-  appareils = [{
-    name: 'Machine à laver',
-    status: 'allumé'
-  },
-  {
-    name: 'Frigo',
-    status: 'éteint'
-  },
-  {
-    name: 'Ordinateur',
-    status: 'allumé'
-  }]
+  appareilsSubject = new Subject<any[]>();
+
+  private appareils = [
+    {
+      id: 1,
+      name: 'Machine à laver',
+      status: 'allumé',
+    },
+    {
+      id: 2,
+      name: 'Frigo',
+      status: 'éteint',
+    },
+    {
+      id: 3,
+      name: 'Ordinateur',
+      status: 'allumé',
+    },
+  ];
+
+  getAppareilById(id: number) {
+    const appareil = this.appareils.find(s => s.id === id);
+    return appareil;
+  }
+
+  emitAppareilSubject() {
+    this.appareilsSubject.next(this.appareils.slice());
+  }
 
   switchOnAll() {
     for (let appareil of this.appareils) {
       appareil.status = 'allumé';
     }
+    this.emitAppareilSubject();
   }
 
   switchOffAll() {
     for (let appareil of this.appareils) {
       appareil.status = 'éteint';
     }
+    this.emitAppareilSubject();
   }
 
   switchOnOne(i: number) {
     this.appareils[i].status = 'allumé';
+    this.emitAppareilSubject();
   }
 
   switchOffOne(i: number) {
     this.appareils[i].status = 'éteint';
+    this.emitAppareilSubject();
   }
 }

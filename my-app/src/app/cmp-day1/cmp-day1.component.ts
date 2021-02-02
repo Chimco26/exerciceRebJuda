@@ -1,3 +1,4 @@
+import { DataService } from './../services/data.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { DateModel } from '../models/date.model';
 
@@ -8,9 +9,14 @@ import { DateModel } from '../models/date.model';
 })
 export class CmpDay1Component implements OnInit {
 
-  @Input() date: DateModel;
+  @Input() date: Date;
 
-  constructor() { }
+
+  constructor(private dataService: DataService) { }
+
+  onTravelsDay() {
+    this.dataService.pushTravelsAndLowerPrice(this.dataService.source, this.dataService.dest, this.date)
+  }
 
   ngOnInit(): void {
   }

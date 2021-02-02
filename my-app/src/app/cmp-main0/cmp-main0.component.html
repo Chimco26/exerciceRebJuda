@@ -11,8 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngIf="search">
-    <ng-container *ngFor="let dispo of dispoDates[0]">
+    <ng-container>
+    <ng-container *ngFor="let dispo of dispoTravel">
     <tr>
       <app-cmp-main1 class="table-line" [dispo1]="dispo"></app-cmp-main1>
     </tr>

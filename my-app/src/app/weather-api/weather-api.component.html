@@ -1,0 +1,10 @@
+<h2>Check weather</h2>
+<label>City: <input #cityname></label> <button (click)='check(cityname)'>Check weather</button>
+<div>
+    <span *ngIf='temp'>The temperatue is {{ temp }}</span>
+</div>
+
+<label>name: <input #name></label> <button (click)='checkGit(name)'>Check user</button>
+<div>
+    <span *ngIf='nameUser'>The name is {{ nameUser }} and his location is {{ locationUser }}</span>
+</div>

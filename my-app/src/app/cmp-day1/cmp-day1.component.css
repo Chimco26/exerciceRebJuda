@@ -1,6 +1,6 @@
 button:focus {
-  color: white;
-  background-color: blue;
+  color: rgb(61, 206, 32);
+  background-color: rgb(235, 8, 8);
 }
 
 button {

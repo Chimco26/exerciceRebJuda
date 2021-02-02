@@ -4,9 +4,11 @@
       <i class="fas fa-angle-double-left"></i>
     </button>
   </div>
-
-  <app-cmp-day1 class="col" *ngFor="let date of dates" [date]="date"></app-cmp-day1>
-
+    <app-cmp-day1
+      class="col"
+      *ngFor="let date of dates"
+      [date]="date"
+    ></app-cmp-day1>
   <div class="col text-center">
     <button class="btn border">
       <i class="fas fa-angle-double-right"></i>

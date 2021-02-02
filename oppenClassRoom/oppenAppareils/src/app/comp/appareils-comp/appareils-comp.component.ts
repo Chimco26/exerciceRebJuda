@@ -10,6 +10,7 @@ export class AppareilsCompComponent implements OnInit {
 
   @Input() appareil;
   @Input() index: number;
+  @Input() id: number;
 
   constructor(private appareilService: AppareilService) { }
 

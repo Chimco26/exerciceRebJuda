@@ -7,12 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cmp-header.component.css'],
 })
 export class CmpHeaderComponent implements OnInit {
-  dataTravel = {
-    source: null,
-    dest: null,
-    date: new Date(),
-  };
-  search = false;
+  source;
+  dest;
+  date;
 
   constructor(private dataService: DataService) {}
 
@@ -22,10 +19,8 @@ export class CmpHeaderComponent implements OnInit {
   }
 
   resultDates() {
-    this.search = true;
-    this.dataService.dataTravel = this.dataTravel;
-    this.dataService.resultDates();
+    this.dataService.resultDates(this.source, this.dest, this.date);
+    this.dataService.source = this.source;
+    this.dataService.dest = this.dest;
   }
-
-
 }

@@ -1,5 +1,21 @@
-<div class="container">
-  <app-cmp-header></app-cmp-header>
-  <app-cmp-day0></app-cmp-day0>
-  <app-cmp-main0></app-cmp-main0>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li routerLinkActive="active">
+        <a class="nav-link" routerLink="tickets"
+          >Tickets de bus <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li routerLinkActive="active">
+        <a class="nav-link" routerLink="climat">Rechercher votre climat</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

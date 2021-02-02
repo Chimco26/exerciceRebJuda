@@ -11,11 +11,9 @@ export class CmpMain0Component implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  dispoDates = [[]];
-  search = this.dataService.openSearch;
+  dispoTravel = this.dataService.dispoTravels;
 
   ngOnInit(): void {
-    this.dispoDates =  this.dataService.dispoDates;
   }
 
 
