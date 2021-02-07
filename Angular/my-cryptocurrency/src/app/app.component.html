@@ -1,31 +1,32 @@
-<header class="container-fluid">
-  <div class="title">
-    <h1 class="align-self-center">Cryptonite</h1>
+<div class="header">
+  <header class="container-fluid">
+    <div class="title">
+      <h1 class="align-self-center">Cryptonite</h1>
+    </div>
+  </header>
+    <nav class="container navbar navbar-expand navbar-light bg-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/home' ]"
+            (click)="setup()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/home' ]">Live reports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/about' ]">About</a>
+        </li>
+      </ul>
+      <div>
+        <form class="form-inline my-2 my-lg-0" (ngSubmit)="searchCurrency(form)"
+          #form="ngForm">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search"
+            aria-label="Search" name="name" ngModel>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    </div>
+    <div class="main container">
+    <router-outlet></router-outlet>
   </div>
-</header>
-<nav class="container navbar navbar-expand navbar-light bg-light">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="[ '/home' ]"
-        (click)="setup()">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="[ '/home' ]">Live reports</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="[ '/about' ]">About</a>
-    </li>
-  </ul>
-  <div>
-    <form class="form-inline my-2 my-lg-0" (ngSubmit)="searchCurrency(form)"
-      #form="ngForm">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search"
-        aria-label="Search" name="name" ngModel>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-<div class="container">
-  <router-outlet></router-outlet>
-</div>

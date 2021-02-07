@@ -1,5 +1,19 @@
 <div class="row">
     <div class="col-sm-12 col-md-4" *ngFor="let currency of currencies">
-        <app-currencies [currency]="currency"></app-currencies>
+        <app-currencies (sendFollowEvent)="alert($event)" [currency]="currency"></app-currencies>
     </div>
 </div>
+<form *ngIf="viewAlert" class="form-inline fixed" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label class="my-1 mr-2" for="delete">The maximum follows you can have is 5,
+        to follow the {{currencyToChange.id}} currency you must to remove another
+        one, please choose the currency you want to remove.</label>
+    <div><select class="custom-select my-1 mr-sm-2" id="delete" name="delete"
+            ngModel required>
+            <ng-container *ngFor="let follow of myFollows">
+                <option value="{{follow.id}}">{{follow.name}}</option>
+            </ng-container>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary my-1" [disabled]="f.invalid">Change</button>
+    <button (click)="cancel()" class="btn btn-primary my-1">Cancel</button>
+</form>

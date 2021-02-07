@@ -8,7 +8,7 @@ export class AppareilService {
 
   appareilsSubject = new Subject<any[]>();
 
-  private appareils = [
+  appareils = [
     {
       id: 1,
       name: 'Machine à laver',

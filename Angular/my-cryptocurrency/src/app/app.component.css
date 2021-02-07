@@ -3,3 +3,19 @@ div.title {
     width: 100%;
     background-color: rgb(188, 204, 235);
 }
+
+img {
+    position: fixed;
+}
+
+.header {
+    position: fixed;
+    height: 200px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.main {
+    margin-top: 200px;
+}

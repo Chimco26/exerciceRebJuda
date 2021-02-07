@@ -1,20 +1,15 @@
 <div class="card" style="width: 100%;">
   <div class="card-body col">
-    <h5 class="card-title">{{currency.symbol}}</h5>
+    <h5 class="card-title">{{currency.name}}</h5>
     <label class="switch float">
-      <input type="checkbox">
-      <span class="slider round"></span>
+      <input type="checkbox"
+      [checked]="switch"
+      [disabled]="toMuchFollows"
+      (change)="followIt(currency.id)">
+      <span class="slider round"
+      (click)="alert()"></span>
     </label>
-    <p class="card-text">{{currency.name}}</p>
-    <!-- <a href="#" class="btn btn-primary" (click)="getMoreInfo(currency.name)">More
-      info</a>
-    <ng-container *ngIf="currencyInfo">
-      <p><span>{{currencyInfo.id}}</span>
-        <img class="float" [src]="currencyInfo.image.small">
-      </p>
-      
-      <p>{{currencyInfo.tickers[0].converted_last.usd}} $</p>
-    </ng-container> -->
+    <p class="card-text">{{currency.symbol}}</p>
     <p>
       <button class="btn btn-primary"
         type="button"
@@ -22,8 +17,7 @@
         data-target="#collapseExample"
         aria-expanded="false"
         aria-controls="collapseExample"
-        (click)="getMoreInfo(currency.id)"
-        (click)="switchCollapse()">
+        (click)="getMoreInfo(currency.id)">
         More info
       </button>
     </p>
@@ -33,11 +27,14 @@
         'contentOff': !collapse,
         'contentOn' : collapse}"
         id="collapseExample">
+        <div *ngIf="spiner" class="loader"></div>
         <div class="card card-body">
           <p><span>{{currencyInfo.name}}</span>
             <img class="float" [src]="currencyInfo.image">
           </p>
-          <p>{{currencyInfo.price}} $</p>
+          <p class="marginBot">{{currencyInfo.priceUsd | currency: "USD"}}</p>
+          <p class="marginBot">{{currencyInfo.priceEur | currency: "EUR"}}</p>
+          <p class="marginBot">{{currencyInfo.priceNis | currency: "ILS"}}</p>
         </div>
       </div>
     </ng-container>

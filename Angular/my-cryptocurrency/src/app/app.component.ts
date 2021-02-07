@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     console.log(name1);
     this.dataCurrenciesService.currencies.length = 0;
     for (let curren of this.currencies) {
-      if (name1 === curren.id) {
-        console.log(curren.id);
+      if (name1 === curren.symbol) {
+        console.log(curren.symbol);
         this.dataCurrenciesService.currencies.push(curren);
         break;
       }

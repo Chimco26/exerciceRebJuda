@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { fakeAsync } from '@angular/core/testing';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,14 @@ export class DataCurrenciesService implements OnInit {
 
   currencies = [];
   modelCurrencies = [];
+  myFollows = [];
+  myFollowObject$: BehaviorSubject<any[]> = new BehaviorSubject<[]>([]);
 
 
   private baseUrl = "https://api.coingecko.com/api/v3/coins/";
 
   getCurrencies(): Observable<any> {
-    return this.httpClient.get(this.baseUrl + "list");
+    return this.httpClient.get(this.baseUrl);
   }
 
   getCurrencyInfo(currency: string): Observable<any> {
@@ -31,6 +34,32 @@ export class DataCurrenciesService implements OnInit {
         console.log(this.currencies[i]);
       });
     }
+  }
+
+  pushFollow(id: string) {
+    for(let currency of this.modelCurrencies) {
+      if(id === currency.id) {
+        this.myFollows.push(currency);
+        this.myFollowObject$.next(this.myFollows);
+        console.log(this.myFollows);
+        break;
+      }
+    }
+  }
+
+  spliceFollow(id: string) {
+    for(let i = 0; i < this.myFollows.length; i++) {
+      if(id == this.myFollows[i].id) {
+        this.myFollows.splice(i, 1);
+        this.myFollowObject$.next(this.myFollows);
+        console.log(this.myFollows);
+        break;
+      }
+    }
+  }
+
+  getFollowObject(): Observable<any[]> {
+    return this.myFollowObject$;
   }
 
   constructor(private httpClient: HttpClient) {
