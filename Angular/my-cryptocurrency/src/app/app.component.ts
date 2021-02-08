@@ -1,6 +1,7 @@
 import { DataCurrenciesService } from './services/data-currencies.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
 
   currencies;
 
-  constructor(private dataCurrenciesService: DataCurrenciesService) { }
+  constructor(private dataCurrenciesService: DataCurrenciesService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.currencies = this.dataCurrenciesService.modelCurrencies;
@@ -22,7 +24,6 @@ export class AppComponent implements OnInit {
   }
 
   searchCurrency(form: NgForm) {
-    // this.currentCurrencies = this.dataCurrenciesService.currencies;
     const name1 = form.value.name;
     console.log(name1);
     this.dataCurrenciesService.currencies.length = 0;

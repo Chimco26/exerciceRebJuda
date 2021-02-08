@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { fakeAsync } from '@angular/core/testing';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -37,19 +36,17 @@ export class DataCurrenciesService implements OnInit {
   }
 
   pushFollow(id: string) {
-    for(let currency of this.modelCurrencies) {
-      if(id === currency.id) {
-        this.myFollows.push(currency);
-        this.myFollowObject$.next(this.myFollows);
-        console.log(this.myFollows);
-        break;
-      }
-    }
+    const cur = this.modelCurrencies.find(a => {
+      return a.id === id
+    });
+    this.myFollows.push(cur);
+    this.myFollowObject$.next(this.myFollows);
+    console.log(this.myFollows);
   }
 
   spliceFollow(id: string) {
-    for(let i = 0; i < this.myFollows.length; i++) {
-      if(id == this.myFollows[i].id) {
+    for (let i = 0; i < this.myFollows.length; i++) {
+      if (id == this.myFollows[i].id) {
         this.myFollows.splice(i, 1);
         this.myFollowObject$.next(this.myFollows);
         console.log(this.myFollows);
