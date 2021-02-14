@@ -10,7 +10,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
-  users: User[] = [];
+  users: User[] = [
+    {firstName: "Chimeon",
+      lastName: "Cohen",
+      email: "chimco26@gmail.com",
+      drinkPreference: "Cola",}
+  ];
  // userSubscription: Subscription;
 
   constructor(private userService: UserServiceService) { }
@@ -19,9 +24,9 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.userService.get().subscribe(
       (users: User[]) => {
         this.users = users;
+        console.log(this.users);
       }
     );
-    this.userService.emitUsers;
   }
 
   ngOnDestroy(): void {

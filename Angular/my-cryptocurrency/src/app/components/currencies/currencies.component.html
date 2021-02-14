@@ -1,6 +1,6 @@
-<div class="card" style="width: 100%;">
+<div class="card" style="width: 100%;" *ngIf="currency">
   <div class="card-body col">
-    <h5 class="card-title">{{currency.name}}</h5>
+    <h5 class="card-title">{{currency.symbol | uppercase}}</h5>
     <label class="switch float">
       <input type="checkbox"
       [checked]="switch"
@@ -9,7 +9,7 @@
       <span class="slider round"
       (click)="alert()"></span>
     </label>
-    <p class="card-text">{{currency.symbol}}</p>
+    <p class="card-text">{{currency.id}}</p>
     <p>
       <button class="btn btn-primary"
         type="button"
@@ -27,14 +27,14 @@
         'contentOff': !collapse,
         'contentOn' : collapse}"
         id="collapseExample">
-        <div *ngIf="spiner" class="loader"></div>
         <div class="card card-body">
           <p><span>{{currencyInfo.name}}</span>
             <img class="float" [src]="currencyInfo.image">
           </p>
-          <p class="marginBot">{{currencyInfo.priceUsd | currency: "USD"}}</p>
-          <p class="marginBot">{{currencyInfo.priceEur | currency: "EUR"}}</p>
-          <p class="marginBot">{{currencyInfo.priceNis | currency: "ILS"}}</p>
+          <div *ngIf="spiner" class="loader"></div>
+          <p>{{currencyInfo.priceUsd | currency: "USD"}}</p>
+          <p>{{currencyInfo.priceEur | currency: "EUR"}}</p>
+          <p>{{currencyInfo.priceNis | currency: "ILS"}}</p>
         </div>
       </div>
     </ng-container>

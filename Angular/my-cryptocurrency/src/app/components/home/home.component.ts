@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
+import { LoginService } from './../../services/login.service';
 import { DataCurrenciesService } from './../../services/data-currencies.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +11,30 @@ import { FormGroup, NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  currencies = [];
+  currencies;
   myFollows = [];
   viewAlert = false;
   currencyToChange;
+  isLoged = false;
 
 
-  constructor(private dataCurrenciesService: DataCurrenciesService) { }
-  
-   
+  constructor(public dataCurrenciesService: DataCurrenciesService,
+    private loginService: LoginService, private router: Router) {
+      this.dataCurrenciesService.setupCurrencies();
+  }
 
   ngOnInit(): void {
-    this.currencies = this.dataCurrenciesService.currencies;
+    this.dataCurrenciesService.nextCurrency().subscribe(resp => {
+      this.currencies = resp;
+      console.log(this.currencies);
+    });
+    this.loginService.returnLogin().subscribe(resp => {
+      this.isLoged = resp;
+    })
+  }
+
+  onRedirection() {
+    this.router.navigate(['/login']);
   }
 
   onSubmit(form: NgForm) {
@@ -37,7 +51,7 @@ export class HomeComponent implements OnInit {
 
   alert(currency) {
     this.currencyToChange = currency;
-    this.myFollows = this. dataCurrenciesService.myFollows;
+    this.dataCurrenciesService.getFollowObject().subscribe(resp => this.myFollows = resp);
     this.viewAlert = true;
     console.log(this.currencyToChange);
   }

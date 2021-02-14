@@ -9,13 +9,15 @@ import { AboutComponent } from './components/about/about.component';
 import { CurrenciesComponent } from './components/currencies/currencies.component';
 import { DataCurrenciesService } from './services/data-currencies.service';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    CurrenciesComponent
+    CurrenciesComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

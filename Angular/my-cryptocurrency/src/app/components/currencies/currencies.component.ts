@@ -30,14 +30,7 @@ export class CurrenciesComponent implements OnInit {
   };
 
   switchCollapse() {
-    if (this.collapse) {
-      this.collapse = false;
-    } else {
-      this.collapse = true;
-      setTimeout(() => {
-        this.collapse = false;
-      }, 10 * 1000);
-    };
+    this.collapse? this.collapse = false : this.collapse = true;
   }
 
   followIt(id: string) {
@@ -90,15 +83,13 @@ export class CurrenciesComponent implements OnInit {
           priceEur: infoData.market_data.current_price.eur,
           priceNis: infoData.market_data.current_price.ils,
         };
+        this.spiner = false;
         })
-        setTimeout(() => {
-          this.spiner = false;
-        }, 1000);
       this.cache = true;
       setTimeout(() => {
         this.setupCurrency();
+        this.collapse = false;
       }, 60 * 1000);
-      console.log(this.currencyInfo);
     }
   };
 
@@ -111,6 +102,7 @@ export class CurrenciesComponent implements OnInit {
       priceNis: '',
     };
     this.cache = false;
+    this.spiner = true;
   }
 
 

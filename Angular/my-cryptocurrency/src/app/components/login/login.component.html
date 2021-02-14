@@ -1,0 +1,20 @@
+<form *ngIf="!isLoged">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address ('abcd@efgh.com')</label>
+        <input #email type="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share
+            your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password ('1234')</label>
+        <input #passeword type="password" class="form-control"
+            id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onLogin(email.value,
+        passeword.value)">Login</button>
+</form>
+<div *ngIf="isLoged">
+    <p>Do you want to disconnect?</p>
+    <button (click)="onLogoff()" class="btn btn-danger">disconnect</button>
+</div>

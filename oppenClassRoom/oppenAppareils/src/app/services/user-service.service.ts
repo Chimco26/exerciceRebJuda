@@ -8,19 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class UserServiceService {
   private users: User[] = [];
-  userSubject = new Subject<User[]>();
+  userSubject$ = new Subject<User[]>();
 
   emitUsers() {
-    this.userSubject.next(this.users);
+    this.userSubject$.next(this.users.slice());
   }
 
   get(): Observable<any[]> {
-    return this.userSubject;
+    return this.userSubject$;
   }
 
   addUser(user: User) {
     this.users.push(user);
-    console.log(this.users);
     this.emitUsers();
   }
 }

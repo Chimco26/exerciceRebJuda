@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   currencies;
+  myFollows = [];
 
   constructor(private dataCurrenciesService: DataCurrenciesService,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.currencies = this.dataCurrenciesService.modelCurrencies;
+    this.dataCurrenciesService.nextModel().subscribe(resp => this.currencies = resp);
+    this.dataCurrenciesService.getFollowObject().subscribe(resp => this.myFollows = resp);
   }
 
   setup(): void {
@@ -25,14 +27,14 @@ export class AppComponent implements OnInit {
 
   searchCurrency(form: NgForm) {
     const name1 = form.value.name;
-    console.log(name1);
-    this.dataCurrenciesService.currencies.length = 0;
-    for (let curren of this.currencies) {
-      if (name1 === curren.symbol) {
-        console.log(curren.symbol);
-        this.dataCurrenciesService.currencies.push(curren);
-        break;
-      }
-    }
+    console.log(this.currencies);
+    const curren = this.currencies.find(resp => resp.symbol === name1);
+    console.log(curren);
+    this.dataCurrenciesService.pushCurrency(curren);
+    this.dataCurrenciesService.spiner = false;
+  }
+
+  showFollows() {
+    this.dataCurrenciesService.pushCurrenciesFollow();
   }
 }
