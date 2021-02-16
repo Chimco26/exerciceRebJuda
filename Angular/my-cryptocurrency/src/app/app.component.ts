@@ -15,8 +15,7 @@ export class AppComponent implements OnInit {
   myFollows = [];
 
   constructor(private dataCurrenciesService: DataCurrenciesService,
-    public loginService: LoginService,
-    private router: Router) { }
+    public loginService: LoginService) { }
 
   ngOnInit(): void {
     this.dataCurrenciesService.nextModel().subscribe(resp => this.currencies = resp);
