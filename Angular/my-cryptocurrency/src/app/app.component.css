@@ -5,15 +5,17 @@ div.title {
 }
 
 .header {
-    position: fixed;
-    height: 150px;
     top: 0;
     width: 100%;
+    position: fixed;
     z-index: 100;
 }
 
 .main {
-    margin-top: 220px;
+    margin-top: 0;
+    padding-top: 200px;
+    position: relative;
+    min-height: 700px;
 }
 
 .floatR {
@@ -24,12 +26,13 @@ div.title {
     float: left;
 }
 
-.parallax {
+.parallaxe {
     /* The image used */
+    height: 100%;
     background-image: url("https://cryptoast.fr/wp-content/uploads/2018/11/comprendre-crypto-monnaies.jpg");
   
     /* Set a specific height */
-    height: 500px;
+    height: 100%;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

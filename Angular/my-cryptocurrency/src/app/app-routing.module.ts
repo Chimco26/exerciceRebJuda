@@ -1,3 +1,4 @@
+import { FollowsComponent } from './components/follows/follows.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -6,9 +7,10 @@ import { AboutComponent } from './components/about/about.component';
 import { UserGuard } from './guard/user.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent, canActivate: [UserGuard] },
+  { path: 'follows', component: FollowsComponent, canActivate: [UserGuard]},
   { path: 'about', component: AboutComponent },
 ];
 

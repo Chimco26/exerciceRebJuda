@@ -1,0 +1,19 @@
+<div class="card" style="width: 100%;">
+  <div class="card-body col">
+    <div>
+      <h5 class="card-title">{{follow.id | uppercase}}</h5>
+    </div>
+    <div *ngIf="!(observable | async) else cur" class="loader"></div>
+      <ng-template #cur>
+      <div class="card-text">
+        <p>{{(observable | async)?.market_data.current_price.usd | currency:
+          "USD"}}</p>
+        <p>{{(observable | async)?.market_data.current_price.eur | currency:
+          "EUR"}}</p>
+        <p>{{(observable | async)?.market_data.current_price.ils | currency:
+          "ILS"}}</p>
+      </div>
+    </ng-template>
+  </div>
+  <button class="btn btn-danger" (click)="removeFollow()">Remove</button>
+</div>

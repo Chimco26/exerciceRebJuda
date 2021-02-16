@@ -20,17 +20,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  errorMessage: string;
-
 
   onLogin(email: string, password: string) {
     this.loginService.getLogin(email, password).subscribe(resp => {
       if (resp) {
         this.isLoged = true;
         this.router.navigate(['/home']);
-        console.log(this.isLoged);
-      } else {
-        this.errorMessage = "error!!!"
       }
     })
 

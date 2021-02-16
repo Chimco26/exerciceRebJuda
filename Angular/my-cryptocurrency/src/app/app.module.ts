@@ -10,6 +10,8 @@ import { CurrenciesComponent } from './components/currencies/currencies.componen
 import { DataCurrenciesService } from './services/data-currencies.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { FollowsComponent } from './components/follows/follows.component';
+import { OneFollowComponent } from './components/one-follow/one-follow.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { LoginComponent } from './components/login/login.component';
     AboutComponent,
     CurrenciesComponent,
     LoginComponent,
+    FollowsComponent,
+    OneFollowComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { DataCurrenciesService } from './services/data-currencies.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   myFollows = [];
 
   constructor(private dataCurrenciesService: DataCurrenciesService,
-              private router: Router) { }
+    public loginService: LoginService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.dataCurrenciesService.nextModel().subscribe(resp => this.currencies = resp);
@@ -27,14 +29,7 @@ export class AppComponent implements OnInit {
 
   searchCurrency(form: NgForm) {
     const name1 = form.value.name;
-    console.log(this.currencies);
     const curren = this.currencies.find(resp => resp.symbol === name1);
-    console.log(curren);
     this.dataCurrenciesService.pushCurrency(curren);
-    this.dataCurrenciesService.spiner = false;
-  }
-
-  showFollows() {
-    this.dataCurrenciesService.pushCurrenciesFollow();
   }
 }

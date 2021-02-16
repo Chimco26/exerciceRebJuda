@@ -20,7 +20,6 @@ export class LoginService {
   }
 
   returnLogin(): Observable<boolean> {
-    this.isLoged = false;
     return this.isLogedObject$;
   }
 }

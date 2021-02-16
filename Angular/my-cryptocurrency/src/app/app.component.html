@@ -1,40 +1,45 @@
-
-<div class="header">
-  <header class="container-fluid">
-    <div class="title">
-      <h1 class="align-self-center floatL">Cryptonite</h1>
-      <h5 class="floatR">My follows: {{myFollows.length}}</h5>
+<div class="parallaxe">
+  <div class="header">
+    <header class="container-fluid">
+      <div class="title">
+        <h1 class="align-self-center floatL">Cryptonite</h1>
+        <h5 class="floatR">My follows: {{myFollows.length}}</h5>
+      </div>
+      <nav class="container navbar navbar-expand navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/home' ]"
+              (click)="setup()">Home</a>
+          </li>
+          <li *ngIf="!(loginService.returnLogin() | async) else logout" class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/login' ]">Login</a>
+          </li>
+          <ng-template #logout>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/login' ]">Logout</a>
+          </li>
+        </ng-template>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/follows' ]">Follows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/about' ]">About</a>
+          </li>
+        </ul>
+        <div>
+          <form class="form-inline my-2 my-lg-0" (ngSubmit)="searchCurrency(form)"
+            #form="ngForm">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search"
+              aria-label="Search" name="name" ngModel>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <div class="">
+    <div class="main container">
+      <router-outlet></router-outlet>
     </div>
-  </header>
-  <nav class="container navbar navbar-expand navbar-light bg-light">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/home' ]"
-          (click)="setup()">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/login' ]">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/home' ]"
-          (click)="showFollows()">Follows</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ '/about' ]">About</a>
-      </li>
-    </ul>
-    <div>
-      <form class="form-inline my-2 my-lg-0" (ngSubmit)="searchCurrency(form)"
-        #form="ngForm">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search"
-          aria-label="Search" name="name" ngModel>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-</div>
-<div class="parallax">
-  <div class="main container">
-    <router-outlet></router-outlet>
   </div>
 </div>

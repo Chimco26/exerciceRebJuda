@@ -1,6 +1,6 @@
+import { CurrencyModel } from './../../models/currency.model';
 import { DataCurrenciesService } from './../../services/data-currencies.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-currencies',
@@ -10,27 +10,28 @@ import { Subscription } from 'rxjs';
 export class CurrenciesComponent implements OnInit {
 
   @Input() currency;
-  @Input() index;
-  @Output() sendFollowEvent: EventEmitter<any[]> = new EventEmitter<any[]>();
+  @Output() sendFollowEvent: EventEmitter<object> = new EventEmitter<object>();
 
   cache = false;
   collapse = false;
   switch = false;
   toMuchFollows = false;
   spiner = true;
-  numberOfFollows;
+  numberOfFollows: number;
 
 
-  currencyInfo = {
-    name: '',
-    image: '',
-    priceUsd: '',
-    priceEur: '',
-    priceNis: '',
-  };
+  currencyInfo: CurrencyModel = {
+    id: null,
+    name: null,
+    symbol: null,
+    image: null,
+    priceUsd: null,
+    priceEur: null,
+    priceNis: null
+  }
 
   switchCollapse() {
-    this.collapse? this.collapse = false : this.collapse = true;
+    this.collapse ? this.collapse = false : this.collapse = true;
   }
 
   followIt(id: string) {
@@ -53,7 +54,7 @@ export class CurrenciesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
     this.dataCurrenciesService.getFollowObject().subscribe(resp => {
       for (let follow of resp) {
         if (follow.id === this.currency.id) {
@@ -77,14 +78,16 @@ export class CurrenciesComponent implements OnInit {
     if (!this.cache) {
       this.dataCurrenciesService.getCurrencyInfo(currency).subscribe((infoData: any) => {
         this.currencyInfo = {
+          id: infoData.id,
           name: infoData.symbol,
+          symbol: infoData.symbol,
           image: infoData.image.small,
           priceUsd: infoData.market_data.current_price.usd,
           priceEur: infoData.market_data.current_price.eur,
           priceNis: infoData.market_data.current_price.ils,
         };
         this.spiner = false;
-        })
+      })
       this.cache = true;
       setTimeout(() => {
         this.setupCurrency();
@@ -95,11 +98,13 @@ export class CurrenciesComponent implements OnInit {
 
   setupCurrency(): void {
     this.currencyInfo = {
-      name: '',
-      image: '',
-      priceUsd: '',
-      priceEur: '',
-      priceNis: '',
+      id: null,
+      name: null,
+      symbol: null,
+      image: null,
+      priceUsd: null,
+      priceEur: null,
+      priceNis: null
     };
     this.cache = false;
     this.spiner = true;
