@@ -1,9 +1,9 @@
-<h2 *ngIf="(myFollows.length > 0) else notFollow">Your follows</h2>
+<h2 *ngIf="(myFollows.length > 0) else notFollow">Your follows:</h2>
 <ng-template #notFollow>
     <h2>You have not follow!!!</h2>
 </ng-template>
 <div class="row">
-    <div class="col-sm-12 col-md-4" *ngFor="let follow of myFollows">
+    <div class="col-sm-5 col-md-3" *ngFor="let follow of myFollows">
         <app-one-follow [follow]="follow"></app-one-follow>
     </div>
 </div>

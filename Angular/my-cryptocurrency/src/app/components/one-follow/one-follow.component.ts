@@ -16,7 +16,8 @@ export class OneFollowComponent implements OnInit {
   observable: Observable<number>
   
   ngOnInit() {
-    this.observable = this.dataCurrenciesService.getCurrencyInfo(this.follow.id);    
+    this.observable = this.dataCurrenciesService.getCurrencyInfo(this.follow.id);
+    console.log(this.follow)   
   }
 
   removeFollow() {

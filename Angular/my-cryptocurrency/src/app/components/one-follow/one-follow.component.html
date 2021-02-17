@@ -6,6 +6,7 @@
     <div *ngIf="!(observable | async) else cur" class="loader"></div>
       <ng-template #cur>
       <div class="card-text">
+        <img [src]="(observable | async)?.image.small">
         <p>{{(observable | async)?.market_data.current_price.usd | currency:
           "USD"}}</p>
         <p>{{(observable | async)?.market_data.current_price.eur | currency:
