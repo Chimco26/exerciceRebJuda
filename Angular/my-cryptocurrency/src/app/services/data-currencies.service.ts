@@ -49,7 +49,7 @@ export class DataCurrenciesService implements OnInit {
     this._currencies.length = 0;
     this._modelCurrencies.length = 0;
     this.getCurrencies().subscribe(curr => {
-      this._currencies = curr.splice(0, 10);
+      this._currencies = curr.splice(0, 50);
       this.currency$.next(this._currencies);
       this.spiner = false;
       this._modelCurrencies = [...this._currencies];
