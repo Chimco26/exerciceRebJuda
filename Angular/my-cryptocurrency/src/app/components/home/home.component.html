@@ -3,7 +3,7 @@
 
 <!-- cards -->
 <div class="row" *ngIf="isLoged && !viewAlert && !dataCurrenciesService.spiner">
-    <div class="col-sm-12 col-md-4" *ngFor="let currency of currencies">
+    <div class="col-sm-5 col-md-4" *ngFor="let currency of currencies">
         <app-currencies (sendFollowEvent)="alert($event)" [currency]="currency"></app-currencies>
     </div>
 </div>
