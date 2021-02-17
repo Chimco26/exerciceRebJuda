@@ -22,7 +22,7 @@
             <ng-container *ngFor="let follow of myFollows">
                 <option value="{{follow.id}}">{{follow.id}}</option>
             </ng-container>
-        </select>
+        </select> 
     </div>
     <button type="submit" class="btn btn-primary my-1" [disabled]="f.invalid">Change</button>
     <button (click)="cancel()" class="btn btn-primary my-1">Cancel</button>
