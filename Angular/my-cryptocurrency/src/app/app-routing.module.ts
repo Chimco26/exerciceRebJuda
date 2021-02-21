@@ -1,3 +1,4 @@
+import { SignupComponent } from './components/signup/signup.component';
 import { FollowsComponent } from './components/follows/follows.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -9,6 +10,7 @@ import { UserGuard } from './guard/user.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'signup', component: SignupComponent},
   { path: 'home', component: HomeComponent, canActivate: [UserGuard] },
   { path: 'follows', component: FollowsComponent, canActivate: [UserGuard]},
   { path: 'about', component: AboutComponent },

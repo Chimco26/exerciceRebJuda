@@ -1,8 +1,8 @@
 <!-- loading -->
-<div *ngIf="dataCurrenciesService.spiner && isLoged" class="loader"></div>
+<div *ngIf="dataCurrenciesService.spiner" class="loader"></div>
 
 <!-- cards -->
-<div class="row" *ngIf="isLoged && !viewAlert && !dataCurrenciesService.spiner">
+<div class="row" *ngIf="!viewAlert && !dataCurrenciesService.spiner">
     <div class="col-sm-5 col-md-4" *ngFor="let currency of currencies">
         <app-currencies (sendFollowEvent)="alert($event)" [currency]="currency"></app-currencies>
     </div>

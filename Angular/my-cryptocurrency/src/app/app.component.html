@@ -11,25 +11,32 @@
             <a class="nav-link" [routerLink]="[ '/home' ]"
               (click)="setup()">Home</a>
           </li>
-          <li *ngIf="!(loginService.returnLogin() | async) else logout" class="nav-item">
-            <a class="nav-link" [routerLink]="[ '/login' ]">Login</a>
-          </li>
+          <ng-container *ngIf="!isAuth else logout">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/login' ]">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/signup' ]">Sign up</a>
+            </li>
+          </ng-container>
           <ng-template #logout>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/login' ]">Logout</a>
+            </li>
+          </ng-template>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="[ '/login' ]">Logout</a>
-          </li>
-        </ng-template>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="[ '/follows' ]">Follows</a>
+            <a class="nav-link" [routerLink]="[ '/follows' ]">Follows in real time</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="[ '/about' ]">About</a>
           </li>
         </ul>
         <div>
-          <form class="form-inline my-2 my-lg-0" (ngSubmit)="searchCurrency(form)"
+          <form class="form-inline my-2 my-lg-0"
+            (ngSubmit)="searchCurrency(form)"
             #form="ngForm">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search"
+            <input class="form-control mr-sm-2" type="search"
+              placeholder="Search"
               aria-label="Search" name="name" ngModel>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>

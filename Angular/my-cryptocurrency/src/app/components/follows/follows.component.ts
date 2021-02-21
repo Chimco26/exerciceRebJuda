@@ -1,3 +1,4 @@
+import { CurrencyModel } from './../../models/currency.model';
 import { DataCurrenciesService } from './../../services/data-currencies.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FollowsComponent implements OnInit {
 
-  myFollows: object[];
+  myFollows: CurrencyModel[];
 
   constructor(public dataCurrenciesService: DataCurrenciesService) { }
 

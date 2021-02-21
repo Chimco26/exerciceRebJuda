@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { UserServiceService } from './services/user-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [

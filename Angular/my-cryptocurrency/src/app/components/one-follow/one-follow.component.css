@@ -8,3 +8,15 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  .right {
+    float: right;
+  }
+
+  .rightUp {
+    color: green;
+  }
+
+  .rightDown {
+    color: red;
+  }

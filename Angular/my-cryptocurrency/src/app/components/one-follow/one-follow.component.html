@@ -1,10 +1,25 @@
 <div class="card" style="width: 100%;">
-  <div class="card-body col">
+  <div *ngIf="!follow1" class="loader"></div>
+  <div *ngIf="follow1" class="card-body col">
     <div>
-      <h5 class="card-title">{{follow.id | uppercase}}</h5>
+      <h5 class="card-title">{{follow1.id | uppercase}}</h5>
+      <div *ngIf="arrow" class="right">
+        <p *ngIf="up"><i class="fas fa-arrow-circle-up rightUp"></i></p>
+        <p *ngIf="!up"><i class="fas fa-arrow-circle-down rightDown"></i></p>
+      </div>
     </div>
-    <div *ngIf="!(observable | async) else cur" class="loader"></div>
-      <ng-template #cur>
+    <div class="card-text">
+      <img [src]="follow1.image">
+      <p>{{follow1.priceUsd | currency:
+        "USD"}}</p>
+      <p>{{follow1.priceEur | currency:
+        "EUR"}}</p>
+      <p>{{follow1.priceNis | currency:
+        "ILS"}}</p>
+    </div>
+
+    <!-- <div *ngIf="!(observable | async) else cur" class="loader"></div>
+    <ng-template #cur>
       <div class="card-text">
         <img [src]="(observable | async)?.image.small">
         <p>{{(observable | async)?.market_data.current_price.usd | currency:
@@ -14,7 +29,7 @@
         <p>{{(observable | async)?.market_data.current_price.ils | currency:
           "ILS"}}</p>
       </div>
-    </ng-template>
+    </ng-template> -->
   </div>
   <button class="btn btn-danger" (click)="removeFollow()">Remove</button>
 </div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,39 @@ export class LoginService {
 
   returnLogin(): Observable<boolean> {
     return this.isLogedObject$;
+  }
+
+  creatNewUser(email: string, passeword: string) {
+    return new Promise<void>(
+      (resolve, reject) => {
+        firebase.auth().createUserWithEmailAndPassword(email, passeword).then(
+          () => {
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      }
+    );
+  }
+
+  signInUser(email: string, passeword: string) {
+    return new Promise<void>(
+      (resolve, reject) => {
+        firebase.auth().signInWithEmailAndPassword(email, passeword).then(
+          () => {
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      }
+    );
+  }
+
+  signOutUser() {
+    firebase.auth().signOut();
   }
 }

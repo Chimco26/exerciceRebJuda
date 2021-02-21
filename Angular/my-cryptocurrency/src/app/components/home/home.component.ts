@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   myFollows = [];
   viewAlert = false;
   currencyToChange;
-  isLoged = false;
 
 
   constructor(public dataCurrenciesService: DataCurrenciesService,
@@ -27,9 +26,6 @@ export class HomeComponent implements OnInit {
     this.dataCurrenciesService.nextCurrency().subscribe(resp => {
       this.currencies = resp;
     });
-    this.loginService.returnLogin().subscribe(resp => {
-      this.isLoged = resp;
-    })
   }
 
   alert(currency) {

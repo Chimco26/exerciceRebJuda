@@ -28,7 +28,6 @@ export class EditAppareilComponent implements OnInit {
     appareil.status = form.value.status;
     appareil.id = this.appareilService.appareils[this.appareilService.appareils.length - 1].id + 1;
     this.appareilService.appareils.push(appareil);
-    this.appareilService.emitAppareilSubject;
-    this.router.navigate(['/appareils']);
+    this.appareilService.envoyerHttp();
   }
 }

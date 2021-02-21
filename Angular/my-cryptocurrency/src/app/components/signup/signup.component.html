@@ -1,25 +1,20 @@
-<form class="fixed" *ngIf="!isAuth else isNotLoged">
-    <h3>Sign in</h3>
+<!-- to signUp -->
+<h3>Sign up</h3>
+<form>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">Email address ('abcd@efgh.com')</label>
         <input #email type="email" class="form-control" id="exampleInputEmail1"
             aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share
             your email with anyone else.</small>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label for="exampleInputPassword1">Password ('1234')</label>
         <input #passeword type="password" class="form-control"
             id="exampleInputPassword1">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="onLogin(email.value,
+    <button type="submit" class="btn btn-primary" (click)="onSignUp(email.value,
         passeword.value)">Login</button>
         <p>{{errorMessage}}</p>
 </form>
-<!-- to logout -->
-<ng-template #isNotLoged>
-    <div class="fixed" *ngIf="isAuth">
-        <p>Do you want to disconnect?</p>
-        <button (click)="onLogoff()" class="btn btn-danger">disconnect</button>
-    </div>
-</ng-template>
+

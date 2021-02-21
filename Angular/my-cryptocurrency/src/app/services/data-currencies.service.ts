@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CurrencyModel } from '../models/currency.model';
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +60,16 @@ export class DataCurrenciesService implements OnInit {
 
   pushFollow(id: string) {
     const cur = this._modelCurrencies.find(a => a.id === id);
-    this._myFollows.push(cur);
+    const curObject: CurrencyModel = {
+      id: cur.id,
+      name: cur.name,
+      symbol: cur.symbol,
+      image: cur.image.small,
+      priceUsd: cur.market_data.current_price.usd,
+      priceEur: cur.market_data.current_price.eur,
+      priceNis: cur.market_data.current_price.ils,
+    }
+    this._myFollows.push(curObject);
     this.myFollow$.next(this._myFollows);
   }
 

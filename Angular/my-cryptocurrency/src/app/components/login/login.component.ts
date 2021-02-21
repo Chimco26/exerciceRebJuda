@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { BehaviorSubject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -10,29 +11,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  isLoged = false;
+  isAuth = false;
+  errorMessage = '';
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginService.returnLogin().subscribe(resp => {
-      this.isLoged = resp;
-    })
+    firebase.auth().onAuthStateChanged(
+      (user) => {
+        if(user) {
+          this.isAuth = true;
+        } else {
+          this.isAuth = false;
+        }
+      }
+    )
   }
 
 
   onLogin(email: string, password: string) {
-    this.loginService.getLogin(email, password).subscribe(resp => {
-      if (resp) {
-        this.isLoged = true;
+    this.loginService.signInUser(email, password).then(
+      () => {
         this.router.navigate(['/home']);
+      },
+      (error) => {
+        this.errorMessage = error;
       }
-    })
-
+    );
   }
 
   onLogoff() {
-    this.loginService.isLogedObject$.next(false);
+    this.loginService.signOutUser();
   }
 
 

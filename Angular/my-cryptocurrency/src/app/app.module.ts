@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { FollowsComponent } from './components/follows/follows.component';
 import { OneFollowComponent } from './components/one-follow/one-follow.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OneFollowComponent } from './components/one-follow/one-follow.component
     LoginComponent,
     FollowsComponent,
     OneFollowComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
