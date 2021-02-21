@@ -1,0 +1,12 @@
+.fixed {
+    position: fixed;
+    top: 240px;
+}
+
+.red {
+    color: red;
+}
+
+.bgWhite {
+    background-color: white;
+}

@@ -1,15 +1,16 @@
 <!-- to signUp -->
-<h3>Sign up</h3>
-<form>
+<div class="row bgWhite">
+<form class="col col-md-5 fixed">
+    <h3>Alredy have an acount? <a class="red" [routerLink]="[ '/login' ]">go to login</a> or create a new acount</h3>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address ('abcd@efgh.com')</label>
+        <label for="exampleInputEmail1">Email address</label>
         <input #email type="email" class="form-control" id="exampleInputEmail1"
             aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share
             your email with anyone else.</small>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Password ('1234')</label>
+        <label for="exampleInputPassword1">Password</label>
         <input #passeword type="password" class="form-control"
             id="exampleInputPassword1">
     </div>
@@ -17,4 +18,5 @@
         passeword.value)">Login</button>
         <p>{{errorMessage}}</p>
 </form>
+</div>
 

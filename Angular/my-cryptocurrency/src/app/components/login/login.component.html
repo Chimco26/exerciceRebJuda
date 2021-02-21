@@ -1,21 +1,25 @@
-<form class="fixed" *ngIf="!isAuth else isNotLoged">
-    <h3>Sign in</h3>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input #email type="email" class="form-control" id="exampleInputEmail1"
-            aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share
-            your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input #passeword type="password" class="form-control"
-            id="exampleInputPassword1">
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="onLogin(email.value,
-        passeword.value)">Login</button>
+<div class="row">
+    <form class="col col-md-5 fixed" *ngIf="!isAuth else isNotLoged">
+        <h3>Connection</h3>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input #email type="email" class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share
+                your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input #passeword type="password" class="form-control"
+                id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary"
+            (click)="onLogin(email.value,
+            passeword.value)">Login</button>
         <p>{{errorMessage}}</p>
-</form>
+    </form>
+</div>
 <!-- to logout -->
 <ng-template #isNotLoged>
     <div class="fixed" *ngIf="isAuth">

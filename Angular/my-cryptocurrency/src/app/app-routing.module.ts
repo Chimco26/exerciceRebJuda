@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { UserGuard } from './guard/user.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: SignupComponent },
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'home', component: HomeComponent, canActivate: [UserGuard] },

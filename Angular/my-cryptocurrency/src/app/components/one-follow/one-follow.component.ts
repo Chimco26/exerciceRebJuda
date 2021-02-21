@@ -1,21 +1,26 @@
 import { CurrencyModel } from './../../models/currency.model';
 import { Observable } from 'rxjs';
 import { DataCurrenciesService } from './../../services/data-currencies.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-one-follow',
   templateUrl: './one-follow.component.html',
   styleUrls: ['./one-follow.component.css']
 })
-export class OneFollowComponent implements OnInit {
+export class OneFollowComponent implements OnInit, OnDestroy {
 
   @Input() follow: CurrencyModel;
   follow1: CurrencyModel;
   arrow = false;
   up: boolean;
+  down: boolean;
+  intervalFollows;
 
   constructor(public dataCurrenciesService: DataCurrenciesService) {
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.intervalFollows);
   }
 
   ngOnInit() {
@@ -26,23 +31,47 @@ export class OneFollowComponent implements OnInit {
     }
     )
 
-    console.log(this.follow);
-    setInterval(() => {
+    this.intervalFollows = setInterval(() => {
+      let time = 15;
       this.dataCurrenciesService.getCurrencyInfo(this.follow.id).subscribe((resp: any) => {
         if (resp.market_data.current_price.usd != this.follow1.priceUsd) {
           this.arrow = true;
+          if (resp.market_data.current_price.usd >= this.follow1.priceUsd) {
+            this.up = true;
+            const clignote = setInterval(() => {
+              time--;
+              this.clignotUp();
+              if(time <= 0) {
+                clearInterval(clignote);
+              }
+            }, 800);
+            this.down = false;
+          } else {
+            this.down = true;
+            const clignote = setInterval(() => {
+              time--;
+              this.clignotDown();
+              if(time <= 0) {
+                clearInterval(clignote);
+              }
+            }, 800);
+            this.up = false;
+          }
           this.initFollow(resp);
           console.log('hello');
           console.log(resp.market_data.current_price.usd);
-          if (resp.market_data.current_price.usd >= this.follow1.priceUsd) {
-            this.up = true;
-          } else {
-            this.up = false;
-          }
         }
         console.log('10 scd')
       });
-    }, 10 * 1000)
+    }, 15 * 1000)
+  }
+
+  clignotUp() {
+    this.up? this.up = false : this.up = true;
+  }
+
+  clignotDown() {
+    this.down? this.down = false : this.down = true;
   }
 
   initFollow(resp: any) {
