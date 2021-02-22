@@ -32,7 +32,7 @@ export class OneFollowComponent implements OnInit, OnDestroy {
     )
 
     this.intervalFollows = setInterval(() => {
-      let time = 15;
+      let time = 16;
       this.dataCurrenciesService.getCurrencyInfo(this.follow.id).subscribe((resp: any) => {
         if (resp.market_data.current_price.usd != this.follow1.priceUsd) {
           this.arrow = true;
