@@ -3,7 +3,7 @@
     <h2>You have not follow!!!</h2>
 </ng-template>
 <div class="row">
-    <div class="col-sm-5 col-md-3" *ngFor="let follow of myFollows">
-        <app-one-follow [follow]="follow"></app-one-follow>
+    <div class="col-sm-5 col-md-3" *ngFor="let follow of myFollows; let i = index">
+        <app-one-follow [follow]="follow" [index]="i"></app-one-follow>
     </div>
 </div>

@@ -11,6 +11,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 export class OneFollowComponent implements OnInit, OnDestroy {
 
   @Input() follow: CurrencyModel;
+  @Input() index: number;
   follow1: CurrencyModel;
   arrow = false;
   up: boolean;
@@ -37,6 +38,7 @@ export class OneFollowComponent implements OnInit, OnDestroy {
         if (resp.market_data.current_price.usd != this.follow1.priceUsd) {
           this.arrow = true;
           if (resp.market_data.current_price.usd >= this.follow1.priceUsd) {
+            this.playAudioWin();
             this.up = true;
             const clignote = setInterval(() => {
               time--;
@@ -47,6 +49,7 @@ export class OneFollowComponent implements OnInit, OnDestroy {
             }, 800);
             this.down = false;
           } else {
+            this.playAudioWloose();
             this.down = true;
             const clignote = setInterval(() => {
               time--;
@@ -63,7 +66,7 @@ export class OneFollowComponent implements OnInit, OnDestroy {
         }
         console.log('10 scd')
       });
-    }, 15 * 1000)
+    }, (14 + this.index) * 1000)
   }
 
   clignotUp() {
@@ -88,6 +91,20 @@ export class OneFollowComponent implements OnInit, OnDestroy {
 
   removeFollow() {
     this.dataCurrenciesService.spliceFollow(this.follow.id)
+  }
+
+  playAudioWin() {
+    let audio = new Audio();
+    audio.src = "../../../assets/winer.mp3";
+    audio.load();
+    audio.play();
+  }
+
+  playAudioWloose() {
+    let audio = new Audio();
+    audio.src = "../../../assets/danger.mp3";
+    audio.load();
+    audio.play();
   }
 
 
