@@ -8,17 +8,7 @@ export class DatesService {
 
 myDate = new Date;
 
-  myDates: Date[] = [
-    new Date,
-    new Date,
-    new Date,
-    new Date,
-    new Date,
-    new Date,
-    new Date,
-    new Date,
-    new Date
-  ];
+  myDates: Date[] = [];
 
   myDates$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>(this.myDates);
 
@@ -28,7 +18,15 @@ myDate = new Date;
   }
 
 
-  constructor() { }
+  constructor() {
+    for (let index = 0; index < 10; index++) {
+      let fixDate = new Date(this.myDate);
+      let currentDate = fixDate;
+      currentDate.setDate(fixDate.getDate() + index);
+      console.log(currentDate);
+      this.myDates.push(currentDate);
+    }
+  }
 
 
 
