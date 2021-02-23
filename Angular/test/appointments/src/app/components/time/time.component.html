@@ -1,0 +1,8 @@
+<h2>Choose an hour</h2>
+<div class="list-group">
+    <ng-container *ngFor="let hour of myHours">
+        <a (click)="onChooseHour(hour)" [routerLink]="[ '/time' ]" class="list-group-item list-group-item-action">
+            {{hour}}
+        </a>
+    </ng-container>
+</div>
