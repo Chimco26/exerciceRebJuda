@@ -28,6 +28,24 @@ export class AppointmentsService {
     return this.myAppointments$;
   }
 
+  deleteAppointment(appointment: AppointmentModel) {
+      for(let i = 0; i < this.myAppointments.length; i++) {
+        if(appointment.number === this.myAppointments[i].number) {
+          this.myAppointments.splice(i, 1);
+          if(i<this.myAppointments.length) {
+            for(let j = i; j < this.myAppointments.length; j++) {
+              this.myAppointments[j].number--;
+            }
+          }
+          break;
+        }
+      }
+      this._myAppointments = [...this.myAppointments];
+      this.myAppointments$.next(this._myAppointments);
+    
+    
+  }
+
   constructor() {
     this.myAppointments$ = new BehaviorSubject<AppointmentModel[]>(this._myAppointments);
    }

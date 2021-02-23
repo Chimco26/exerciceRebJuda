@@ -3,5 +3,6 @@
       <h5 class="card-title">Your appointment: {{appointment.number}}</h5>
       <p class="card-text">This appointment is planned for {{appointment.date | date}} at {{appointment.hour}}.</p>
       </div>
+      <button class="btn btn-danger" (click)="onDelete(appointment)">Delete this appointment</button>
   </div>
   <button (click)="onRedirect()" class="btn btn-success">Home</button>

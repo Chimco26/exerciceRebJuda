@@ -19,8 +19,12 @@ export class ListAppointmentsComponent implements OnInit {
     this.appointmentsService.sendAppointments().subscribe(appoint => this.myAppointments = appoint);
   }
 
+  onDelete(appoint: AppointmentModel) {
+    this.appointmentsService.deleteAppointment(appoint);
+  }
+
   onRedirect() {
-    this.router.navigate(['/dates'])
+    this.router.navigate(['/dates']);
   }
 
 }
