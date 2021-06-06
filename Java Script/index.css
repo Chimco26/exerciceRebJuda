@@ -1,0 +1,27 @@
+.square {
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    font-size: 150px;
+    text-align: center;
+    margin: 20px;
+    float: left;
+    line-height: 1;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.display {
+    display: none;
+}
+
+.hidden {
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    display: none;
+}
+
+.float {
+    float: left;
+}

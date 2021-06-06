@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\bin\Debug\netcoreapp3.1\Fibonatti.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Fibonatti\obj\Debug\netcoreapp3.1\Fibonatti.genruntimeconfig.cache

@@ -1,0 +1,16 @@
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.exe
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.deps.json
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.dll
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\ref\newSharp.dll
+C:\Users\Chimco26\Documents\git\C#\newSharp\bin\Debug\net5.0\newSharp.pdb
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.dll
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\ref\newSharp.dll
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.pdb
+C:\Users\Chimco26\Documents\git\C#\newSharp\obj\Debug\net5.0\newSharp.genruntimeconfig.cache

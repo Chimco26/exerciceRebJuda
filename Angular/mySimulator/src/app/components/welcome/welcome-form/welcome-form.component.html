@@ -1,0 +1,50 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+        <h3>Hello! You have to register yourself please.</h3>
+        <form [formGroup]='userForm' class="container row g-3"
+            (ngSubmit)="onSubmitForm()">
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="validationCustom01"
+                    formControlName="first_name"
+                    placeholder="First name">
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="validationCustom02"
+                    formControlName="last_name"
+                    placeholder="Last name">
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">ID</label>
+                <input type="number" class="form-control"
+                    id="validationCustomUsername"
+                    placeholder="0123456789"
+                    formControlName="ID">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Tel</label>
+                <input type="tel" class="form-control" id="validationCustom03"
+                    formControlName="tel">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Email</label>
+                <input type="email" class="form-control" id="validationCustom04"
+                    formControlName="email">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom05" class="form-label">Password</label>
+                <input type="password" class="form-control"
+                    id="validationCustom05"
+                    formControlName="password">
+            </div>
+            <div>
+                A validation number will be sent to you to this number.
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit"
+                    [disabled]="userForm.invalid">Submit form</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\bin\Debug\netcoreapp3.1\DelegateEx2.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\DelegateEx2\obj\Debug\netcoreapp3.1\DelegateEx2.genruntimeconfig.cache

@@ -1,0 +1,20 @@
+export interface User{
+    _id?: string,
+    first_name?: string,
+    last_name?: string,
+    ID?: string,
+    tel?: string,
+    email?: string,
+    password?: string,
+    token?: string,
+    age?: number,
+    contry?: string,
+    city?: string,
+    gradYear?: number,
+    academi?: string,
+    medicInstitut?: string,
+    residency?: string,
+    departement?: string,
+    role?: string,
+    roleNumber?: number
+}

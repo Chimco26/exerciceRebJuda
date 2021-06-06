@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\bin\Debug\netcoreapp3.1\MyLinqEx.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\MyLinqEx\obj\Debug\netcoreapp3.1\MyLinqEx.genruntimeconfig.cache

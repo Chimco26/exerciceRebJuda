@@ -1,0 +1,14 @@
+<form class="row g-3" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="col-auto">
+      <label for="staticEmail2" class="visually-hidden">Email</label>
+      <input type="text" class="form-control" id="staticEmail2" placeholder="email@example.com" name="email" ngModel>
+    </div>
+    <div class="col-auto">
+      <label for="inputPassword2" class="visually-hidden">Password</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password" ngModel>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+    </div>
+  </form>
+  <div *ngFor="let user of listUsers">{{user.first_name}}, {{user.last_name}}</div>

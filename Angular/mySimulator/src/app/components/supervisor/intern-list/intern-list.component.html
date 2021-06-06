@@ -1,0 +1,21 @@
+<a [routerLink]="[ '/supervisor/upload-tests' ]">Update-tests</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Tests</th>
+        <th scope="col">Average grade</th>
+        <th scope="col">Last test date</th>
+        <th scope="col">Last test grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of listUsers">
+        <td>{{user.first_name}} {{user.last_name}}</td>
+        <td>______</td>
+        <td>______</td>
+        <td>______</td>
+        <td>______</td>
+      </tr>
+    </tbody>
+  </table>

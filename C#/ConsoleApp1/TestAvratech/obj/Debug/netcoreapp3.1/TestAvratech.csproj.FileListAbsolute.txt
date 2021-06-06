@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\bin\Debug\netcoreapp3.1\TestAvratech.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\TestAvratech\obj\Debug\netcoreapp3.1\TestAvratech.genruntimeconfig.cache

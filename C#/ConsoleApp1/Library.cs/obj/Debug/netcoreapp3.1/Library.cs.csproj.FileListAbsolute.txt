@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\bin\Debug\netcoreapp3.1\Library.cs.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\Library.cs\obj\Debug\netcoreapp3.1\Library.cs.genruntimeconfig.cache

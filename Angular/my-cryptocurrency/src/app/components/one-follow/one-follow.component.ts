@@ -17,6 +17,7 @@ export class OneFollowComponent implements OnInit, OnDestroy {
   up: boolean;
   down: boolean;
   intervalFollows;
+  time: number;
 
   constructor(public dataCurrenciesService: DataCurrenciesService) {
   }
@@ -33,32 +34,14 @@ export class OneFollowComponent implements OnInit, OnDestroy {
     )
 
     this.intervalFollows = setInterval(() => {
-      let time = 20;
+      this.time = 16;
       this.dataCurrenciesService.getCurrencyInfo(this.follow.id).subscribe((resp: any) => {
         if (resp.market_data.current_price.usd != this.follow1.priceUsd) {
           this.arrow = true;
           if (resp.market_data.current_price.usd >= this.follow1.priceUsd) {
-            this.playAudioWin();
-            this.up = true;
-            const clignote = setInterval(() => {
-              time--;
-              this.clignotUp();
-              if(time <= 0) {
-                clearInterval(clignote);
-              }
-            }, 800);
-            this.down = false;
+            this.flashAndAudioUp();
           } else {
-            this.playAudioWloose();
-            this.down = true;
-            const clignote = setInterval(() => {
-              time--;
-              this.clignotDown();
-              if(time <= 0) {
-                clearInterval(clignote);
-              }
-            }, 800);
-            this.up = false;
+            this.flashAndAudioDown()
           }
           this.initFollow(resp);
           console.log('hello');
@@ -67,14 +50,6 @@ export class OneFollowComponent implements OnInit, OnDestroy {
         console.log('10 scd')
       });
     }, (14 + this.index) * 1000)
-  }
-
-  clignotUp() {
-    this.up? this.up = false : this.up = true;
-  }
-
-  clignotDown() {
-    this.down? this.down = false : this.down = true;
   }
 
   initFollow(resp: any) {
@@ -92,6 +67,14 @@ export class OneFollowComponent implements OnInit, OnDestroy {
   removeFollow() {
     this.dataCurrenciesService.spliceFollow(this.follow.id)
   }
+  
+  flashUp() {
+    this.up? this.up = false : this.up = true;
+  }
+
+  flashDown() {
+    this.down? this.down = false : this.down = true;
+  }
 
   playAudioWin() {
     let audio = new Audio();
@@ -100,12 +83,37 @@ export class OneFollowComponent implements OnInit, OnDestroy {
     audio.play();
   }
 
-  playAudioWloose() {
+  playAudioLoose() {
     let audio = new Audio();
     audio.src = "../../../assets/danger.mp3";
     audio.load();
     audio.play();
   }
 
+  flashAndAudioUp() {
+    this.playAudioWin();
+    this.down = false;
+    const clignote = setInterval(() => {
+      this.time--;
+      this.flashUp();
+      if(this.time <= 0) {
+        clearInterval(clignote);
+        this.up = true;
+      }
+    }, 800);
+  }
+
+  flashAndAudioDown() {
+    this.playAudioLoose();
+    this.up = false;
+    const clignote = setInterval(() => {
+      this.time--;
+      this.flashDown();
+      if(this.time <= 0) {
+        clearInterval(clignote);
+        this.down = true;
+      }
+    }, 800);
+  }
 
 }

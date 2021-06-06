@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+        <title>Document</title>
+        <body>
+            <div id="block">
+
+            </div>
+            <div class="float">
+                <button onclick="newGame(10)" class="btn btn-success">Easy game</button>
+                <button onclick="newGame(16)" class="btn btn-success">Medium
+                    game</button>
+                <button onclick="newGame(22)" class="btn btn-success">Hard game</button>
+                <button onclick="newGame(28)" class="btn btn-success">Extra hard
+                    game</button>
+                <div id="stopwatch">
+                    Timer: 00:00:00
+                </div>
+            </div>
+            <div class="card text-center col-2 hidden">
+                <div class="card-body">
+                    <h5 class="card-title" id="win">You win!!! your time is:
+                    </h5>
+                    <div class="card-text">
+                    <p>Do you want to play again?</p>
+                    <button onclick="newGame(10)" class="btn btn-primary">Easy
+                        game</button>
+                    <button onclick="newGame(16)" class="btn btn-primary">Medium
+                        game</button>
+                    <button onclick="newGame(22)" class="btn btn-primary">Hard
+                        game</button>
+                    <button onclick="newGame(28)" class="btn btn-primary">Extra
+                        hard game</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="index.js"></script>
+        </body>
+    </html>

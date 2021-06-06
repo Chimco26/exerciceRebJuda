@@ -1,0 +1,30 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+        <div class="card text-center">
+            <div class="card-header">
+                <div>
+                    <strong>Hi {{name}}!</strong> Please type the mobile
+                    verification code you
+                    received. <br>
+                    {{num1}} {{num2}} {{num3}} {{num4}}
+                </div>
+                <div class="text-center">
+                <input [(ngModel)]="input1" class="input" type="number"
+                    (keyup)="onDigitInput($event)" autofocus />
+                <input [(ngModel)]="input2" class="input" type="number"
+                    (keyup)="onDigitInput($event)" />
+                <input [(ngModel)]="input3" class="input" type="number"
+                    (keyup)="onDigitInput($event)" />
+                <input [(ngModel)]="input4" class="input" type="number"
+                    (keyup)="onDigitInput($event)" />
+                </div>
+                <div style="color: red;">
+                    {{inputError}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <button class="btn btn-primary" (click)="onSubmit()">Continue</button> -->

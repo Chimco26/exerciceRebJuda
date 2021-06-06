@@ -1,0 +1,88 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6" *ngIf="!next">
+        <form class="container row g-3">
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Age</label>
+                <input type="number" class="form-control"
+                    id="validationCustom01"
+                    [(ngModel)]="loginService.myUser.age"
+                    name="age"
+                    placeholder="Your age">
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Contry</label>
+                <input type="text" class="form-control"
+                    id="validationCustom02"
+                    [(ngModel)]="loginService.myUser.contry"
+                    name="contry"
+                    placeholder="Your Contry">
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">City</label>
+                <input type="text" class="form-control"
+                    id="validationCustomUsername"
+                    [(ngModel)]="loginService.myUser.city"
+                    name="city"
+                    placeholder="Your city">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Graduation
+                    year</label>
+                <input type="number" class="form-control"
+                    id="validationCustom03"
+                    [(ngModel)]="loginService.myUser.gradYear"
+                    name="gradYear"
+                    placeholder="Your graduation year">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">Acatemic
+                    institution</label>
+                <input type="text" class="form-control"
+                    id="validationCustom04"
+                    [(ngModel)]="loginService.myUser.academi"
+                    name="academi"
+                    placeholder="Your academic institution">
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" (click)="onNext()">NEXT</button>
+            </div>
+        </form>
+    </div>
+
+            <div class="col-md-6" *ngIf="next">
+                <form class="container row g-3">
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Medical
+                            institution</label>
+                        <input type="text" class="form-control"
+                            id="validationCustom01"
+                            [(ngModel)]="loginService.myUser.medicInstitut"
+                            name="medicInstitut"
+                            placeholder="Your medical institution">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">Residency</label>
+                        <input type="text" class="form-control"
+                            id="validationCustom02"
+                            [(ngModel)]="loginService.myUser.residency"
+                            name="residency"
+                            placeholder="Your residency">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustomUsername"
+                            class="form-label">Departement</label>
+                        <input type="text" class="form-control"
+                            id="validationCustomUsername"
+                            [(ngModel)]="loginService.myUser.departement"
+                            name="departement"
+                            placeholder="Your departement">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" (click)="onNext()">PREVIOUS</button>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" (click)="onSubmitForm()">DONE!</button>
+                    </div>
+                </form>
+            </div>
+</div>

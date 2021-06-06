@@ -1,0 +1,13 @@
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.exe
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.deps.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.runtimeconfig.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.runtimeconfig.dev.json
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\bin\Debug\netcoreapp3.1\HaifaTest.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.csprojAssemblyReference.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.AssemblyInfoInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.AssemblyInfo.cs
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.csproj.CoreCompileInputs.cache
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.dll
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.pdb
+C:\Users\Chimco26\Documents\git\C#\ConsoleApp1\HaifaTest\obj\Debug\netcoreapp3.1\HaifaTest.genruntimeconfig.cache
